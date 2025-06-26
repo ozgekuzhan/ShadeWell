@@ -15,8 +15,16 @@
     --transition: all 0.3s ease;
 }
 
+.lora-font {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: (lora-font);
     line-height: 1.6;
     color: var(--text);
     background: var(--white);
