@@ -15,19 +15,28 @@
     --transition: all 0.3s ease;
 }
 
-.lora-font {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
 }
 
+.skip-link:focus {
+    top: 0;
+}
 
 body {
-    font-family: (lora-font);
+    font-family: "Lora", serif;
+    font-weight: 400;
     line-height: 1.6;
     color: var(--text);
     background: var(--white);
+    font-size: 16px;
 }
 
 .container {
@@ -48,37 +57,43 @@ body {
     text-align: center;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
-    font-weight: 300;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
     color: var(--primary);
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .section-subtitle {
     text-align: center;
     color: var(--text-light);
     font-size: 1.1rem;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header {
@@ -94,6 +109,7 @@ header {
 
 header.scrolled {
     box-shadow: var(--shadow);
+    padding: 15px 0;
 }
 
 nav {
@@ -103,10 +119,11 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--text);
     text-decoration: none;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -121,12 +138,13 @@ nav {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    padding: 5px 0;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
@@ -137,6 +155,10 @@ nav {
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
 }
 
 .mobile-menu-toggle {
@@ -170,6 +192,7 @@ nav {
 
 .hero {
     height: 100vh;
+    min-height: 600px;
     position: relative;
     display: flex;
     align-items: center;
@@ -202,17 +225,18 @@ nav {
 
 .hero-content h1 {
     color: var(--white);
+    margin-bottom: 1.5rem;
 }
 
 .subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
 }
 
 .hero-form {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2.5rem;
     border-radius: 12px;
     max-width: 450px;
     margin: 0 auto;
@@ -222,7 +246,7 @@ nav {
 .hero-form h2 {
     color: var(--text);
     font-size: 1.5rem;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
 .contact-form {
@@ -252,23 +276,23 @@ nav {
 }
 
 .contact-form input,
-.contact-form select {
+.contact-form select,
+.contact-form textarea {
     padding: 15px;
     border: 2px solid #e0e0e0;
+    font-family: "Lora", serif;
     border-radius: 8px;
     font-size: 16px;
-    font-family: inherit;
     transition: var(--transition);
+    width: 100%;
 }
 
 .contact-form input:focus,
-.contact-form select:focus {
+.contact-form select:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--primary);
-}
-
-#phone {
-  width: 100%;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
 }
 
 .cta-button {
@@ -281,6 +305,7 @@ nav {
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
+    font-family: inherit;
 }
 
 .cta-button:hover {
@@ -288,16 +313,20 @@ nav {
     box-shadow: 0 10px 25px rgba(212, 165, 116, 0.3);
 }
 
+.cta-button:active {
+    transform: translateY(0);
+}
+
 .cta-button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+    transform: none;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    grid-template-rows: repeat(2, 1fr);
 }
 
 .product-card {
@@ -317,6 +346,11 @@ nav {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
 .product-card h3,
@@ -342,24 +376,25 @@ nav {
 
 .cta-section h2 {
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .cta-section p {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
 }
 
 .cta-section .contact-form {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2.5rem;
     border-radius: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .cta-section input,
-.cta-section select {
+.cta-section select,
+.cta-section textarea {
     color: var(--text);
 }
 
@@ -371,6 +406,12 @@ nav {
     font-weight: 500;
 }
 
+.guarantees span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -379,7 +420,7 @@ nav {
 
 .service-card {
     background: var(--white);
-    padding: 40px 30px;
+    padding: 2.5rem 2rem;
     border-radius: 12px;
     text-align: center;
     transition: var(--transition);
@@ -390,16 +431,27 @@ nav {
     box-shadow: var(--shadow);
 }
 
+.service-card h3 {
+    margin-bottom: 1rem;
+}
+
 .about-text {
     font-size: 1.2rem;
     color: var(--text-light);
-    max-width: 700px;
-    margin: 0 auto 50px;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
 }
 
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat {
+    text-align: center;
 }
 
 .stat-number {
@@ -407,10 +459,61 @@ nav {
     font-size: 3rem;
     font-weight: 300;
     color: var(--primary);
+    margin-bottom: 0.5rem;
 }
 
 .stat-label {
     color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.service-areas {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+}
+
+.service-areas h3 {
+    margin-bottom: 1rem;
+}
+
+.service-areas p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.seo-content {
+    background: var(--bg-light);
+}
+
+.seo-content h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.seo-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.seo-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.seo-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.seo-content li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
 }
 
 footer {
@@ -421,25 +524,53 @@ footer {
 
 footer h2 {
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .contact-info a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 .address {
+    color: #ccc;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+
+.address strong {
+    color: white;
+}
+
+.address small {
+    display: block;
+    margin-top: 0.5rem;
     color: #999;
-    margin-bottom: 30px;
+}
+
+.business-hours {
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.business-hours strong {
+    color: white;
 }
 
 .copyright {
@@ -447,6 +578,15 @@ footer h2 {
     font-size: 0.9rem;
     padding-top: 20px;
     border-top: 1px solid #333;
+}
+
+.copyright a {
+    color: #999;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: var(--primary);
 }
 
 @media (max-width: 768px) {
@@ -475,7 +615,7 @@ footer h2 {
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .form-grid {
@@ -483,11 +623,11 @@ footer h2 {
     }
 
     .phone-group {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .country-select {
-        flex: none;
+        flex: 0 0 100px;
     }
 
     .contact-info {
@@ -498,5 +638,93 @@ footer h2 {
     .guarantees {
         flex-direction: column;
         align-items: center;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-form {
+        padding: 2rem;
+    }
+
+    .cta-section .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    header, footer, .cta-section, .hero-form {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
     }
 }
