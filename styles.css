@@ -105,8 +105,7 @@ nav {
 }
 
 .cta-button {
-    background: var(--primary);
-    color: white;
+    color: var(--primary);
     padding: 12px 24px;
     border: none;
     border-radius: 50px;
@@ -182,6 +181,7 @@ nav {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.1;
+    color: var(--cream);
 }
 
 .hero-tagline {
@@ -790,6 +790,9 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+.footer-logo img {
+  width: 200px;
 }
 
 .footer-tagline {
