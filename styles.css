@@ -6,21 +6,15 @@
 
 :root {
     --primary: #ff3463;
-    --bronze: #DCBB8C;
-    --bordeaux: #692B39;
-    --rose-bronze: #B88C73;
     --anthracite: #2E2E2E;
-    --forest: #1C3C3A;
-    --cream: #F5F2ED;
-    --navy: #1A1F36;
 }
 
 body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--anthracite);
+    color: white;
     overflow-x: hidden;
-    background-color: var(--cream);
+    background-color: var(--anthracite);
 }
 
 .container {
@@ -30,7 +24,7 @@ body {
 }
 
 header {
-    background: white;
+    background: var(--primary);
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     position: fixed;
     width: 100%;
@@ -40,7 +34,7 @@ header {
 }
 
 header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--primary);
     backdrop-filter: blur(10px);
 }
 
@@ -79,7 +73,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--anthracite);
+    color: white;
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
@@ -97,7 +91,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: white;
 }
 
 .nav-links a:hover::after {
@@ -105,7 +99,8 @@ nav {
 }
 
 .cta-button {
-    color: var(--primary);
+    color: white;
+    background: var(--anthracite);
     padding: 12px 24px;
     border: none;
     border-radius: 50px;
@@ -115,7 +110,7 @@ nav {
 }
 
 .cta-button:hover {
-    background: var(--bordeaux);
+    background: var(--anthracite);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 52, 99, 0.3);
 }
@@ -181,13 +176,13 @@ nav {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.1;
-    color: var(--cream);
+    color: white;
 }
 
 .hero-tagline {
     font-family: 'Magnolia Script', cursive;
     font-size: 1.8rem;
-    color: var(--rose-bronze);
+    color: var(--primary);
     margin-bottom: 1rem;
     opacity: 0.9;
 }
@@ -225,7 +220,7 @@ nav {
 
 .services {
     padding: 100px 0;
-    background: white;
+    background: var(--anthracite);
 }
 
 .section-header {
@@ -235,13 +230,13 @@ nav {
 
 .section-header h2 {
     font-size: 2.8rem;
-    color: var(--navy);
+    color: white;
     margin-bottom: 1rem;
 }
 
 .section-header p {
     font-size: 1.2rem;
-    color: var(--anthracite);
+    color: white;
     opacity: 0.8;
 }
 
@@ -252,7 +247,7 @@ nav {
 }
 
 .service-card {
-    background: var(--cream);
+    background: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -266,7 +261,7 @@ nav {
     right: 20px;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--bronze);
+    color: var(--primary);
     opacity: 0.3;
     z-index: 1;
 }
@@ -299,7 +294,7 @@ nav {
 .service-content h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--navy);
+    color: var(--anthracite);
 }
 
 .service-content p {
@@ -325,9 +320,92 @@ nav {
     transform: translateX(5px);
 }
 
+.products-section {
+    padding: 100px 0;
+    background: var(--anthracite);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.product-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.product-category h3 {
+    color: var(--anthracite);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-list li {
+    color: var(--anthracite);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(46, 46, 46, 0.1);
+    font-size: 1rem;
+}
+
+.product-list li:last-child {
+    border-bottom: none;
+}
+
+.product-list strong {
+    color: var(--primary);
+}
+
 .why-section {
     padding: 100px 0;
+    background: var(--anthracite);
+}
+
+.testimonials-section {
+    padding: 100px 0;
+    background: var(--anthracite);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
     background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.testimonial-content h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+    color: var(--anthracite);
+    line-height: 1.7;
+    font-style: italic;
 }
 
 .why-header {
@@ -338,7 +416,7 @@ nav {
 .tagline-script {
     font-family: 'Magnolia Script', cursive;
     font-size: 2.2rem;
-    color: var(--rose-bronze);
+    color: var(--primary);
     line-height: 1.4;
 }
 
@@ -354,13 +432,13 @@ nav {
 
 .section-intro h2 {
     font-size: 2.5rem;
-    color: var(--navy);
+    color: white;
     margin-bottom: 1.5rem;
 }
 
 .section-intro p {
     font-size: 1.15rem;
-    color: var(--anthracite);
+    color: white;
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
@@ -368,7 +446,7 @@ nav {
 
 .team-title {
     font-size: 2rem;
-    color: var(--navy);
+    color: white;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -384,7 +462,7 @@ nav {
     grid-template-columns: 200px 1fr;
     gap: 2rem;
     padding: 2rem;
-    background: var(--cream);
+    background: white;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -426,25 +504,10 @@ nav {
     border-radius: 15px;
 }
 
-.sparkle-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="50" font-size="80" text-anchor="middle" alignment-baseline="middle">✨</text></svg>') center/30% no-repeat;
-    opacity: 0.3;
-    animation: sparkle 2s ease-in-out infinite;
-}
-
-@keyframes sparkle {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.2) rotate(180deg); }
-}
 
 .member-info h4 {
     font-size: 1.4rem;
-    color: var(--navy);
+    color: var(--anthracite);
     margin-bottom: 0.3rem;
 }
 
@@ -457,7 +520,7 @@ nav {
 
 .member-tagline {
     font-style: italic;
-    color: var(--rose-bronze);
+    color: var(--primary);
     margin-bottom: 1rem;
     font-size: 0.95rem;
 }
@@ -473,7 +536,7 @@ nav {
     gap: 2rem;
     margin-top: 5rem;
     padding: 3rem;
-    background: var(--cream);
+    background: white;
     border-radius: 20px;
 }
 
@@ -497,7 +560,7 @@ nav {
 
 .end-to-end {
     padding: 80px 0;
-    background: var(--forest);
+    background: var(--anthracite);
     text-align: center;
     color: white;
 }
@@ -516,13 +579,13 @@ nav {
 
 .faq {
     padding: 100px 0;
-    background: var(--cream);
+    background: var(--anthracite);
 }
 
 .faq h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--navy);
+    color: white;
     margin-bottom: 3rem;
 }
 
@@ -547,7 +610,7 @@ nav {
 }
 
 .faq-item h3 {
-    color: var(--navy);
+    color: var(--anthracite);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -565,7 +628,7 @@ nav {
 }
 
 .quote-section {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--forest) 100%);
+    background: var(--anthracite);
     padding: 100px 0;
     color: white;
     text-align: center;
@@ -617,10 +680,7 @@ nav {
 .form-header h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--bronze), var(--rose-bronze));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary);
 }
 
 .form-header p {
@@ -661,7 +721,7 @@ nav {
 
 .form-group input:focus {
     outline: none;
-    border-color: var(--bronze);
+    border-color: var(--primary);
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-1px);
 }
@@ -678,7 +738,7 @@ nav {
 .quote-form .btn-primary {
     width: 100%;
     margin-top: 1.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--bordeaux));
+    background: var(--primary);
     color: white;
     padding: 18px 30px;
     display: flex;
@@ -760,16 +820,16 @@ nav {
     font-size: 1.1rem;
     font-weight: 500;
     padding: 12px 24px;
-    border: 2px solid rgba(220, 187, 140, 0.5);
+    border: 2px solid var(--primary);
     border-radius: 50px;
     display: inline-block;
     transition: all 0.3s ease;
-    background: rgba(220, 187, 140, 0.1);
+    background: rgba(255, 52, 99, 0.1);
 }
 
 .phone-link:hover {
-    border-color: var(--bronze);
-    background: rgba(220, 187, 140, 0.2);
+    border-color: var(--primary);
+    background: rgba(255, 52, 99, 0.2);
     transform: translateY(-2px);
 }
 
@@ -798,13 +858,13 @@ footer {
 .footer-tagline {
     font-family: 'Magnolia Script', cursive;
     font-size: 1.2rem;
-    color: var(--bronze);
+    color: var(--primary);
     opacity: 0.8;
 }
 
 .footer-info h4,
 .footer-contact h4 {
-    color: var(--bronze);
+    color: var(--primary);
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
@@ -839,7 +899,7 @@ footer {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--anthracite);
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -853,7 +913,7 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background: white;
+        background: var(--primary);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -921,7 +981,7 @@ footer {
     top: 20px;
     right: 20px;
     padding: 15px 20px;
-    background: var(--forest);
+    background: var(--anthracite);
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
