@@ -12,9 +12,9 @@
 body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: white;
+    color: var(--anthracite);
     overflow-x: hidden;
-    background-color: var(--anthracite);
+    background-color: white;
 }
 
 .container {
@@ -24,8 +24,8 @@ body {
 }
 
 header {
-    background: var(--primary);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,7 +34,7 @@ header {
 }
 
 header.scrolled {
-    background: var(--primary);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -73,8 +73,8 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    font-weight: 500;
+    color: var(--anthracite);
+    font-weight: 400;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -91,7 +91,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: white;
+    color: var(--primary);
 }
 
 .nav-links a:hover::after {
@@ -100,38 +100,40 @@ nav {
 
 .cta-button {
     color: white;
-    background: var(--anthracite);
-    padding: 12px 24px;
+    background: var(--primary);
+    padding: 10px 20px;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .cta-button:hover {
-    background: var(--anthracite);
-    transform: translateY(-2px);
+    background: var(--primary);
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(255, 52, 99, 0.3);
 }
 
 .btn-primary {
-    background: white;
-    color: var(--anthracite);
-    padding: 15px 30px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
     border: none;
-    border-radius: 50px;
-    font-weight: 600;
+    border-radius: 25px;
+    font-weight: 400;
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(255, 52, 99, 0.2);
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .hero {
@@ -172,10 +174,10 @@ nav {
 }
 
 .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 400;
     margin-bottom: 1rem;
-    line-height: 1.1;
+    line-height: 1.3;
     color: white;
 }
 
@@ -188,9 +190,10 @@ nav {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2.5rem;
-    opacity: 0.8;
+    opacity: 0.7;
+    font-weight: 300;
 }
 
 .hero-reviews {
@@ -220,7 +223,7 @@ nav {
 
 .services {
     padding: 100px 0;
-    background: var(--anthracite);
+    background: white;
 }
 
 .section-header {
@@ -229,15 +232,17 @@ nav {
 }
 
 .section-header h2 {
-    font-size: 2.8rem;
-    color: white;
+    font-size: 2rem;
+    color: var(--anthracite);
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .section-header p {
-    font-size: 1.2rem;
-    color: white;
-    opacity: 0.8;
+    font-size: 1rem;
+    color: var(--anthracite);
+    opacity: 0.7;
+    font-weight: 300;
 }
 
 .services-grid {
@@ -247,10 +252,10 @@ nav {
 }
 
 .service-card {
-    background: white;
-    border-radius: 20px;
+    background: rgba(46, 46, 46, 0.02);
+    border: 1px solid rgba(46, 46, 46, 0.1);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -267,8 +272,9 @@ nav {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    background: rgba(46, 46, 46, 0.04);
+    border-color: rgba(46, 46, 46, 0.2);
 }
 
 .service-image {
@@ -292,9 +298,10 @@ nav {
 }
 
 .service-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: var(--anthracite);
+    font-weight: 400;
 }
 
 .service-content p {
@@ -322,7 +329,7 @@ nav {
 
 .products-section {
     padding: 100px 0;
-    background: var(--anthracite);
+    background: white;
 }
 
 .products-grid {
@@ -333,17 +340,19 @@ nav {
 }
 
 .product-category {
-    background: white;
+    background: rgba(46, 46, 46, 0.02);
+    border: 1px solid rgba(46, 46, 46, 0.1);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
 .product-category h3 {
     color: var(--anthracite);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
     text-align: center;
+    font-weight: 400;
 }
 
 .product-list {
@@ -368,12 +377,12 @@ nav {
 
 .why-section {
     padding: 100px 0;
-    background: var(--anthracite);
+    background: white;
 }
 
 .testimonials-section {
     padding: 100px 0;
-    background: var(--anthracite);
+    background: white;
 }
 
 .testimonials-grid {
@@ -384,28 +393,100 @@ nav {
 }
 
 .testimonial-card {
-    background: white;
+    background: rgba(46, 46, 46, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(46, 46, 46, 0.1);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    background: rgba(46, 46, 46, 0.04);
+    border-color: rgba(46, 46, 46, 0.2);
 }
 
 .testimonial-content h4 {
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.google-rating {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.stars-large {
+    margin-bottom: 0.5rem;
+}
+
+.stars-large i {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin: 0 2px;
+}
+
+.rating-text {
+    color: var(--anthracite);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.google-review {
+    border-left: 4px solid #4285f4;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 1rem;
 }
 
-.testimonial-content p {
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reviewer-avatar {
+    color: #4285f4;
+    font-size: 2.5rem;
+}
+
+.reviewer-details h4 {
+    margin: 0;
     color: var(--anthracite);
-    line-height: 1.7;
-    font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.review-stars {
+    margin-top: 0.25rem;
+}
+
+.review-stars i {
+    color: #ffd700;
+    font-size: 0.8rem;
+    margin-right: 1px;
+}
+
+.google-logo {
+    color: #4285f4;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.review-content p {
+    color: rgba(46, 46, 46, 0.8);
+    line-height: 1.6;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .why-header {
@@ -431,24 +512,27 @@ nav {
 }
 
 .section-intro h2 {
-    font-size: 2.5rem;
-    color: white;
+    font-size: 1.8rem;
+    color: var(--anthracite);
     margin-bottom: 1.5rem;
+    font-weight: 300;
 }
 
 .section-intro p {
-    font-size: 1.15rem;
-    color: white;
-    line-height: 1.8;
+    font-size: 1rem;
+    color: var(--anthracite);
+    line-height: 1.7;
     max-width: 800px;
     margin: 0 auto;
+    font-weight: 300;
 }
 
 .team-title {
-    font-size: 2rem;
-    color: white;
+    font-size: 1.5rem;
+    color: var(--anthracite);
     margin-bottom: 3rem;
     text-align: center;
+    font-weight: 300;
 }
 
 .team-grid {
@@ -462,14 +546,16 @@ nav {
     grid-template-columns: 200px 1fr;
     gap: 2rem;
     padding: 2rem;
-    background: white;
-    border-radius: 20px;
+    background: rgba(46, 46, 46, 0.02);
+    border: 1px solid rgba(46, 46, 46, 0.1);
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
 .team-member:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+    background: rgba(46, 46, 46, 0.04);
+    border-color: rgba(46, 46, 46, 0.2);
 }
 
 .team-member.special {
@@ -560,9 +646,9 @@ nav {
 
 .end-to-end {
     padding: 80px 0;
-    background: var(--anthracite);
+    background: white;
     text-align: center;
-    color: white;
+    color: var(--anthracite);
 }
 
 .end-to-end h2 {
@@ -579,14 +665,15 @@ nav {
 
 .faq {
     padding: 100px 0;
-    background: var(--anthracite);
+    background: white;
 }
 
 .faq h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: white;
+    font-size: 1.8rem;
+    color: var(--anthracite);
     margin-bottom: 3rem;
+    font-weight: 300;
 }
 
 .faq-grid {
@@ -612,7 +699,8 @@ nav {
 .faq-item h3 {
     color: var(--anthracite);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .faq-item p {
@@ -628,9 +716,9 @@ nav {
 }
 
 .quote-section {
-    background: var(--anthracite);
+    background: white;
     padding: 100px 0;
-    color: white;
+    color: var(--anthracite);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -665,12 +753,12 @@ nav {
 .quote-form {
     max-width: 600px;
     margin: 2rem auto;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(46, 46, 46, 0.03);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(46, 46, 46, 0.15);
     border-radius: 20px;
     padding: 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .form-header {
@@ -680,11 +768,11 @@ nav {
 .form-header h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: var(--primary);
+    color: var(--anthracite);
 }
 
 .form-header p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(46, 46, 46, 0.7);
     font-size: 0.95rem;
 }
 
@@ -703,34 +791,38 @@ nav {
     grid-column: 1 / -1;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 18px 20px 18px 50px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(46, 46, 46, 0.2);
     border-radius: 12px;
     font-size: 1rem;
     font-family: inherit;
-    background: rgba(255, 255, 255, 0.03);
-    color: white;
+    background: white;
+    color: var(--anthracite);
     transition: all 0.3s ease;
+    resize: vertical;
 }
 
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(46, 46, 46, 0.6);
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
+    background: white;
     transform: translateY(-1px);
+    box-shadow: 0 0 0 3px rgba(255, 52, 99, 0.1);
 }
 
 .form-icon {
     position: absolute;
     left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 18px;
     font-size: 1.2rem;
     opacity: 0.7;
 }
@@ -786,6 +878,7 @@ nav {
     opacity: 0.7;
     position: relative;
     display: inline-block;
+    color: var(--anthracite);
 }
 
 .or-text::before,
@@ -795,7 +888,7 @@ nav {
     top: 50%;
     width: 50px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(46, 46, 46, 0.2);
 }
 
 .or-text::before {
@@ -815,7 +908,7 @@ nav {
 }
 
 .phone-link {
-    color: white;
+    color: var(--primary);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -824,12 +917,13 @@ nav {
     border-radius: 50px;
     display: inline-block;
     transition: all 0.3s ease;
-    background: rgba(255, 52, 99, 0.1);
+    background: rgba(255, 52, 99, 0.05);
 }
 
 .phone-link:hover {
     border-color: var(--primary);
-    background: rgba(255, 52, 99, 0.2);
+    background: var(--primary);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -899,7 +993,7 @@ footer {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: white;
+    color: var(--anthracite);
 }
 
 @media (max-width: 768px) {
@@ -913,7 +1007,7 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--primary);
+        background: white;
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
