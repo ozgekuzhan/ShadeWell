@@ -24,9 +24,10 @@ body {
 }
 
 header {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -43,16 +44,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    min-height: 80px;
+    position: relative;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    height: 100%;
 }
 
 .logo-text {
-    font-family: 'Magnolia Script', cursive;
     font-size: 3rem;
     color: var(--primary);
 }
@@ -68,15 +71,25 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 4rem;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--anthracite);
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 1.1rem;
     position: relative;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-links a::after {
@@ -101,13 +114,18 @@ nav {
 .cta-button {
     color: white;
     background: var(--primary);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-button:hover {
@@ -148,7 +166,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 0;
 }
 
 .video-background {
@@ -173,18 +191,17 @@ nav {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 120px auto 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
     backdrop-filter: blur(10px);
-    border-radius: 30px;
-    padding: 4rem 3rem;
+    border-radius: 25px;
+    padding: 3rem 2.5rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content {
-    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -203,7 +220,7 @@ nav {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typeWriter 2s ease-out 0.5s both;
+    animation: typeWriter 2s ease-out both;
 }
 
 .hero-title .line-2 {
@@ -211,7 +228,7 @@ nav {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typeWriter 2.5s ease-out 2.8s both;
+    animation: typeWriter 2s ease-out 0.5s both;
 }
 
 
@@ -533,7 +550,7 @@ nav {
 }
 
 .tagline-script {
-    font-family: 'Magnolia Script', cursive;
+    font-family: 'Mont', cursive;
     font-size: 2.2rem;
     color: var(--primary);
     line-height: 1.4;
@@ -935,6 +952,7 @@ nav {
     transform: translateY(-2px);
 }
 
+
 footer {
     background: var(--anthracite);
     color: white;
@@ -946,6 +964,8 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .footer-logo {
@@ -958,7 +978,7 @@ footer {
 }
 
 .footer-tagline {
-    font-family: 'Magnolia Script', cursive;
+    font-family: 'Montserrat', cursive;
     font-size: 1.2rem;
     color: var(--primary);
     opacity: 0.8;
@@ -1001,7 +1021,9 @@ footer {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: white;
+    color: var(--anthracite);
+    z-index: 1001;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -1010,18 +1032,27 @@ footer {
     }
 
     .nav-links {
-        display: none;
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--anthracite);
+        left: 1rem;
+        width: calc(100% - 2rem);
+        background: white;
         flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: none;
+        height: auto;
+        z-index: 1000;
+        border-radius: 20px;
+        border: 1px solid rgba(46, 46, 46, 0.1);
+        gap: 1rem;
     }
 
-    .nav-links.active {
+    .nav-links:not(.show) {
+        display: none !important;
+    }
+
+    .nav-links.show {
         display: flex;
     }
 
@@ -1033,6 +1064,28 @@ footer {
     .hero-title {
         font-size: 2rem;
         line-height: 1.3;
+    }
+
+    .nav-links a {
+        height: auto;
+        padding: 1rem 0;
+        color: var(--anthracite);
+        font-size: 1.1rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(46, 46, 46, 0.1);
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0.25rem 0;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+        background: rgba(255, 52, 99, 0.05);
+        transform: translateY(-2px);
     }
 
     .hero-title .line-1,

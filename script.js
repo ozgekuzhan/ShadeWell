@@ -130,30 +130,6 @@ function showNotification(message, type = 'success') {
 }
 
 function initMobileMenu() {
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.innerHTML = '☰';
-    mobileMenuButton.className = 'mobile-menu-toggle';
-    mobileMenuButton.setAttribute('aria-label', 'Toggle menu');
-
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelector('.nav-links');
-
-    nav.appendChild(mobileMenuButton);
-
-    mobileMenuButton.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function(e) {
-        if (!nav.contains(e.target)) {
-            navLinks.classList.remove('active');
-        }
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
+    // Bootstrap collapse otomatik olarak çalışır
+    // Ek JavaScript gerekmez
 }
