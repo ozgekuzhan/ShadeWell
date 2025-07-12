@@ -42,10 +42,12 @@ function initFAQAccordion() {
         item.addEventListener('click', function() {
             const isActive = this.classList.contains('active');
 
+            // Tüm FAQ'ları kapat
             faqItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
             });
 
+            // Eğer tıklanan önceden kapalıysa, aç
             if (!isActive) {
                 this.classList.add('active');
             }
