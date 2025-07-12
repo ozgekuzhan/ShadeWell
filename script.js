@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormHandling();
     initMobileMenu();
     initGLightbox();
+    initReviewsCarousel();
 });
 
 function initSmoothScrolling() {
@@ -100,6 +101,46 @@ function initGLightbox() {
         loop: true,
         autoplayVideos: false
     });
+}
+
+function initReviewsCarousel() {
+    const track = document.querySelector('.reviews-track');
+    const slides = document.querySelectorAll('.review-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevReview');
+    const nextBtn = document.getElementById('nextReview');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const translateX = -index * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-advance every 5 seconds
+    setInterval(nextSlide, 5000);
 }
 
 function showNotification(message, type = 'success') {

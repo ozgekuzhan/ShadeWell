@@ -621,20 +621,128 @@ nav {
     background: white;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+.reviews-carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reviews-carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-carousel {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.reviews-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: none;
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 52, 99, 0.3);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .prev-btn {
+        left: 5px;
+    }
+    
+    .next-btn {
+        right: 5px;
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(46, 46, 46, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: var(--primary);
+    transform: scale(1.2);
 }
 
 .testimonial-card {
-    background: rgba(46, 46, 46, 0.02);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(46, 46, 46, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 52, 99, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), #ff5577);
+    border-radius: 20px 20px 0 0;
 }
 
 .testimonial-card:hover {
@@ -650,19 +758,75 @@ nav {
     font-weight: 400;
 }
 
-.google-rating {
+.testimonials-header {
     text-align: center;
-    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.testimonials-header h2 {
+    font-size: 2.2rem;
+    color: var(--anthracite);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.testimonials-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.google-rating {
+    display: inline-flex;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 52, 99, 0.1);
+    height: fit-content;
+}
+
+.rating-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.google-icon {
+    color: #4285f4;
+    font-size: 2rem;
+}
+
+.rating-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.google-rating-score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--anthracite);
+    line-height: 1;
+    margin-bottom: 0.2rem;
 }
 
 .stars-large {
-    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .stars-large i {
-    color: #ffd700;
-    font-size: 1.5rem;
-    margin: 0 2px;
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.google-rating-text {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
 }
 
 .rating-text {
@@ -689,8 +853,20 @@ nav {
 }
 
 .reviewer-avatar {
-    color: #4285f4;
-    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #ff5577);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 52, 99, 0.3);
+}
+
+.reviewer-avatar i {
+    color: white;
+    font-size: 1.3rem;
 }
 
 .reviewer-details h4 {
@@ -711,9 +887,16 @@ nav {
 }
 
 .google-logo {
+    background: white;
+    padding: 0.7rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(66, 133, 244, 0.1);
+}
+
+.google-logo i {
     color: #4285f4;
-    font-size: 1.2rem;
-    opacity: 0.7;
+    font-size: 1.1rem;
 }
 
 .review-content p {
@@ -760,7 +943,7 @@ nav {
     font-size: 2.5rem;
     color: var(--anthracite);
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .who-text p {
@@ -851,8 +1034,14 @@ nav {
     font-size: 2.2rem;
     color: var(--anthracite);
     margin: 0 0 3rem 0;
-    font-weight: 600;
+    font-weight: 400;
     position: relative;
+}
+
+.team-title i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
 }
 
 .team-title::after {
