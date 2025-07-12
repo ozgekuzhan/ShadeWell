@@ -287,10 +287,10 @@ nav {
 }
 
 .section-header h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--anthracite);
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .section-header p {
@@ -387,9 +387,25 @@ nav {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
 }
 
 .product-card {
@@ -417,6 +433,7 @@ nav {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .product-card:hover .product-image img {
@@ -714,44 +731,140 @@ nav {
 }
 
 .tagline-script {
-    font-family: 'Mont', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
     color: var(--primary);
     line-height: 1.4;
+    font-style: italic;
 }
 
 .team-section {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-intro {
+.who-we-are-section {
+    margin-bottom: 5rem;
+}
+
+.who-we-are-section {
+    margin-bottom: 5rem;
+}
+
+.who-text {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-.section-intro h2 {
-    font-size: 1.8rem;
+.who-text h2 {
+    font-size: 2.5rem;
     color: var(--anthracite);
     margin-bottom: 1.5rem;
-    font-weight: 300;
+    font-weight: 600;
 }
 
-.section-intro p {
-    font-size: 1rem;
+.who-text p {
+    font-size: 1.1rem;
     color: var(--anthracite);
     line-height: 1.7;
-    max-width: 800px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.who-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .who-highlights {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.highlight-item i {
+    color: var(--primary);
+    font-size: 1.1rem;
+    width: 20px;
+}
+
+.highlight-item span {
+    color: var(--anthracite);
+    font-weight: 500;
+}
+
+.who-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
     margin: 0 auto;
-    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .who-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 1px solid rgba(255, 52, 99, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 52, 99, 0.15);
+}
+
+.stat-card .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-label {
+    font-size: 0.9rem;
+    color: var(--anthracite);
+    font-weight: 500;
 }
 
 .team-title {
-    font-size: 1.5rem;
-    color: var(--anthracite);
-    margin-bottom: 3rem;
     text-align: center;
-    font-weight: 300;
+    font-size: 2.2rem;
+    color: var(--anthracite);
+    margin: 0 0 3rem 0;
+    font-weight: 600;
+    position: relative;
+}
+
+.team-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
 }
 
 .team-grid {
@@ -874,8 +987,11 @@ nav {
 }
 
 .end-to-end h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--anthracite);
 }
 
 .end-to-end p {
@@ -892,16 +1008,24 @@ nav {
 
 .faq h2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: var(--anthracite);
     margin-bottom: 3rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .faq-item {
@@ -923,6 +1047,19 @@ nav {
     margin-bottom: 1rem;
     font-size: 1rem;
     font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-icon {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
 }
 
 .faq-item p {
@@ -930,11 +1067,15 @@ nav {
     line-height: 1.7;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    opacity: 0;
+    transition: all 0.3s ease;
+    margin-top: 0;
 }
 
 .faq-item.active p {
     max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
 .quote-section {
@@ -948,9 +1089,11 @@ nav {
 
 
 .quote-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 400;
+    text-align: center;
+    color: var(--anthracite);
 }
 
 .quote-section > p {

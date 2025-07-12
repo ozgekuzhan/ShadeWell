@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQAccordion();
     initFormHandling();
     initMobileMenu();
+    initGLightbox();
 });
 
 function initSmoothScrolling() {
@@ -91,6 +92,14 @@ function initFormHandling() {
             }
         });
     }
+}
+
+function initGLightbox() {
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: false
+    });
 }
 
 function showNotification(message, type = 'success') {
