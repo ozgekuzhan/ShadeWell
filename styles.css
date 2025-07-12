@@ -372,15 +372,6 @@ nav {
     transition: color 0.3s ease;
 }
 
-.service-link::after {
-    content: ' →';
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-
-.service-link:hover::after {
-    transform: translateX(5px);
-}
 
 .products-section {
     padding: 100px 0;
