@@ -991,6 +991,7 @@ nav {
     gap: 1.5rem;
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 7rem;
 }
 
 @media (max-width: 768px) {
