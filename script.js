@@ -12,7 +12,8 @@ function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
             if (target) {
                 const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = target.offsetTop - headerHeight;
@@ -21,6 +22,13 @@ function initSmoothScrolling() {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+
+                // If target is quoteName input field, focus on it after scroll
+                if (href === '#quoteName' && target.tagName === 'INPUT') {
+                    setTimeout(() => {
+                        target.focus();
+                    }, 1000);
+                }
             }
         });
     });
