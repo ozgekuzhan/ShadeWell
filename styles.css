@@ -313,6 +313,9 @@ nav {
     overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-number {
@@ -350,6 +353,9 @@ nav {
 
 .service-content {
     padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-content h3 {
@@ -363,6 +369,7 @@ nav {
     color: var(--anthracite);
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    flex: 1;
 }
 
 .service-link {
