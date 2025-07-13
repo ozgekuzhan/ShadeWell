@@ -1651,12 +1651,26 @@ footer {
         transform: translateY(-2px);
     }
 
-    .hero-title .line-1,
+    .hero-title .line-1 {
+        white-space: normal;
+        width: auto;
+        display: block;
+        transform: translateY(50px);
+        opacity: 0;
+        animation: slideUpFade 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+    }
+    
     .hero-title .line-2 {
         white-space: normal;
         width: auto;
-        animation: none;
         display: block;
+        transform: translateY(50px);
+        opacity: 0;
+        animation: slideUpFade 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+        background: linear-gradient(135deg, #ff3463, #ff6b9d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .hero-subtitle {
