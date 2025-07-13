@@ -23,9 +23,8 @@ function initSmoothScrolling() {
                     behavior: 'smooth'
                 });
 
-                // If target is quoteName input field, focus on it after scroll
                 if (href === '#quoteName' && target.tagName === 'INPUT') {
-                    setTimeout(function() {
+                    setTimeout(() => {
                         target.focus();
                     }, 1000);
                 }
@@ -34,7 +33,6 @@ function initSmoothScrolling() {
     });
 }
 
-
 function initFAQAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -42,19 +40,16 @@ function initFAQAccordion() {
         item.addEventListener('click', function() {
             const isActive = this.classList.contains('active');
 
-            // Tüm FAQ'ları kapat
             faqItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
             });
 
-            // Eğer tıklanan önceden kapalıysa, aç
             if (!isActive) {
                 this.classList.add('active');
             }
         });
     });
 }
-
 
 function initFormHandling() {
     const quoteForm = document.getElementById('quoteForm');
@@ -173,14 +168,7 @@ function initReviewsCarousel() {
         dot.addEventListener('click', () => showSlide(index));
     });
 
-    // Auto-advance every 5 seconds
-    function autoAdvance() {
-        setTimeout(function() {
-            nextSlide();
-            autoAdvance();
-        }, 5000);
-    }
-    autoAdvance();
+    setInterval(nextSlide, 5000);
 }
 
 function showNotification(message, type = 'success') {
@@ -209,21 +197,17 @@ function showNotification(message, type = 'success') {
 
     document.body.appendChild(notification);
 
-    requestAnimationFrame(function() {
+    requestAnimationFrame(() => {
         notification.style.transform = 'translateX(0)';
     });
 
-    setTimeout(function() {
+    setTimeout(() => {
         notification.style.transform = 'translateX(400px)';
-        setTimeout(function() { 
-            notification.remove(); 
-        }, 300);
+        setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
 
 function initMobileMenu() {
-    // Bootstrap collapse otomatik olarak çalışır
-    // Ek JavaScript gerekmez
 }
 
 function initScrollToTop() {
@@ -231,7 +215,6 @@ function initScrollToTop() {
     
     if (!scrollToTopBtn) return;
 
-    // Show/hide button based on scroll position
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             scrollToTopBtn.classList.add('show');
@@ -240,7 +223,6 @@ function initScrollToTop() {
         }
     });
 
-    // Scroll to top when button is clicked
     scrollToTopBtn.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({
