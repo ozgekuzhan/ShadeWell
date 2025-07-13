@@ -25,7 +25,7 @@ function initSmoothScrolling() {
 
                 // If target is quoteName input field, focus on it after scroll
                 if (href === '#quoteName' && target.tagName === 'INPUT') {
-                    setTimeout(() => {
+                    setTimeout(function() {
                         target.focus();
                     }, 1000);
                 }
@@ -139,7 +139,13 @@ function initReviewsCarousel() {
     });
 
     // Auto-advance every 5 seconds
-    setInterval(nextSlide, 5000);
+    function autoAdvance() {
+        setTimeout(function() {
+            nextSlide();
+            autoAdvance();
+        }, 5000);
+    }
+    autoAdvance();
 }
 
 function showNotification(message, type = 'success') {
@@ -168,13 +174,15 @@ function showNotification(message, type = 'success') {
 
     document.body.appendChild(notification);
 
-    requestAnimationFrame(() => {
+    requestAnimationFrame(function() {
         notification.style.transform = 'translateX(0)';
     });
 
-    setTimeout(() => {
+    setTimeout(function() {
         notification.style.transform = 'translateX(400px)';
-        setTimeout(() => notification.remove(), 300);
+        setTimeout(function() { 
+            notification.remove(); 
+        }, 300);
     }, 3000);
 }
 
