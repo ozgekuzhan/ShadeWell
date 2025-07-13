@@ -58,9 +58,44 @@ function initFAQAccordion() {
 
 function initFormHandling() {
     const quoteForm = document.getElementById('quoteForm');
+    const quoteFormIndex = document.getElementById('quoteFormIndex');
 
     if (quoteForm) {
         quoteForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showNotification('Thank you! We will contact you within 24 hours.', 'success');
+                    this.reset();
+                } else {
+                    showNotification('Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showNotification('Connection error. Please try again.', 'error');
+            } finally {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+
+    if (quoteFormIndex) {
+        quoteFormIndex.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const submitButton = this.querySelector('button[type="submit"]');
