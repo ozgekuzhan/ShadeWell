@@ -59,10 +59,6 @@ nav {
     height: 100%;
 }
 
-.logo-text {
-    font-size: 3rem;
-    color: var(--primary);
-}
 
 .logo img {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -897,18 +893,6 @@ nav {
     margin-right: 1px;
 }
 
-.google-logo {
-    background: white;
-    padding: 0.7rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border: 1px solid rgba(66, 133, 244, 0.1);
-}
-
-.google-logo i {
-    color: #4285f4;
-    font-size: 1.1rem;
-}
 
 .review-content p {
     color: rgba(46, 46, 46, 0.8);
@@ -1325,41 +1309,6 @@ nav {
     margin-top: 1rem;
 }
 
-.quote-section {
-    background: white;
-    padding: 80px 0;
-    color: var(--anthracite);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-
-.quote-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    text-align: center;
-    color: var(--anthracite);
-}
-
-.quote-section > p {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    opacity: 0.85;
-    font-weight: 300;
-}
-
-.quote-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    background: rgba(46, 46, 46, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(46, 46, 46, 0.15);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
 
 .form-header {
     margin-bottom: 2rem;
@@ -1583,7 +1532,49 @@ footer {
     position: relative;
 }
 
+@media (max-width: 992px) {
+    nav {
+        padding: 1rem 1.5rem;
+        min-height: 90px;
+        flex-wrap: nowrap;
+    }
+    
+    .logo img {
+        height: 130px;
+    }
+    
+    .nav-links {
+        position: static;
+        transform: none;
+        left: auto;
+        gap: 1.5rem;
+        flex: 1;
+        justify-content: center;
+        margin: 0 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+    }
+    
+    .cta-button {
+        font-size: 0.75rem;
+        padding: 8px 16px;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 768px) {
+    nav {
+        padding: 1rem 2rem;
+        min-height: 80px;
+    }
+    
+    .logo img {
+        height: 120px;
+    }
+    
     .mobile-menu-toggle {
         display: block;
     }
