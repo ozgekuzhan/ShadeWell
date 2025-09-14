@@ -328,10 +328,10 @@ nav {
 .service-number {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary);
+    color: white;
     opacity: 0.3;
     z-index: 1;
 }
@@ -388,7 +388,7 @@ nav {
 
 
 .products-section {
-    padding: 80px 0;
+    /* padding: 80px 0; */
     background: white;
 }
 
