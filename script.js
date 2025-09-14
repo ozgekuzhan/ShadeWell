@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initFAQAccordion();
     initFormHandling();
-    initMobileMenu();
     initGLightbox();
     initReviewsCarousel();
     initScrollToTop();
@@ -207,8 +206,6 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-function initMobileMenu() {
-}
 
 function initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
