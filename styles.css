@@ -62,6 +62,8 @@ nav {
 .logo img {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 4px 8px rgba(255, 52, 99, 0.1));
+    height: 150px !important;
+    width: auto;
 }
 
 .logo:hover img {
@@ -1581,9 +1583,6 @@ footer {
         flex-wrap: nowrap;
     }
 
-    .logo img {
-        height: 130px;
-    }
 
     .nav-links {
         position: static;
@@ -1631,18 +1630,11 @@ footer {
     }
 
     .mobile-menu-toggle {
+        display: block;
         grid-column: 4;
     }
 
-    .logo img {
-        height: 150px;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
+    .nav-links.show {
         position: absolute;
         top: 100%;
         left: 1rem;
@@ -1651,19 +1643,10 @@ footer {
         flex-direction: column;
         padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transform: none;
-        height: auto;
         z-index: 1000;
         border-radius: 20px;
         border: 1px solid rgba(46, 46, 46, 0.1);
         gap: 1rem;
-    }
-
-    .nav-links:not(.show) {
-        display: none !important;
-    }
-
-    .nav-links.show {
         display: flex;
     }
 
@@ -1690,7 +1673,6 @@ footer {
 
     .nav-links a:hover {
         color: var(--primary);
-        background: rgba(255, 52, 99, 0.05);
         transform: translateY(-2px);
     }
 
@@ -1812,6 +1794,7 @@ footer {
     padding: 160px 0 80px 0;
     position: relative;
 }
+
 
 
 

@@ -19,7 +19,9 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="img/logos/image002.png" alt="Shadewell Blinds" width="auto" height="150">
+                <a href="/">
+                    <img src="img/logos/image002.png" alt="Shadewell Blinds" width="auto">
+                </a>
             </div>
             <ul class="nav-links" id="navbarNav">
                 <li><a href="#home">Home</a></li>
@@ -625,6 +627,13 @@
                             <div class="input-wrapper">
                                 <i class="fas fa-phone"></i>
                                 <input type="tel" name="phone" id="phoneIndex" placeholder="Enter your phone" autocomplete="tel" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCodeIndex">Postal Code</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-pin"></i>
+                                <input type="text" name="postal_code" id="postalCodeIndex" placeholder="e.g. M1A 1A1" autocomplete="postal-code" pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d" title="Please enter a valid Canadian postal code (e.g. M1A 1A1)" required>
                             </div>
                         </div>
                         <div class="form-group full-width">
