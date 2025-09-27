@@ -5,6 +5,12 @@
     position: relative;
 }
 
+@media (min-width: 769px) {
+    .contact-page main {
+        padding-top: 120px;
+    }
+}
+
 .contact-header {
     text-align: center;
     margin: 2rem 0 3rem 0;
