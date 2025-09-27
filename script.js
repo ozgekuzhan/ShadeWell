@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initGLightbox();
     initReviewsCarousel();
     initScrollToTop();
+    initMobileMenu();
 });
 
 function initSmoothScrolling() {
@@ -209,7 +210,7 @@ function showNotification(message, type = 'success') {
 
 function initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
-    
+
     if (!scrollToTopBtn) return;
 
     window.addEventListener('scroll', function() {
@@ -226,5 +227,42 @@ function initScrollToTop() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+}
+
+function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (!mobileMenuToggle || !navLinks) return;
+
+    mobileMenuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+
+        // Update toggle icon
+        const icon = this.querySelector('span');
+        if (navLinks.classList.contains('show')) {
+            icon.innerHTML = '✕';
+        } else {
+            icon.innerHTML = '☰';
+        }
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('show');
+            const icon = mobileMenuToggle.querySelector('span');
+            icon.innerHTML = '☰';
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('show');
+            const icon = mobileMenuToggle.querySelector('span');
+            icon.innerHTML = '☰';
+        }
     });
 }
