@@ -125,6 +125,10 @@ function initFormHandling() {
 }
 
 function initGLightbox() {
+    if (typeof GLightbox === 'undefined' || !document.querySelector('.glightbox')) {
+        return;
+    }
+
     const lightbox = GLightbox({
         touchNavigation: true,
         loop: true,
@@ -138,6 +142,11 @@ function initReviewsCarousel() {
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.getElementById('prevReview');
     const nextBtn = document.getElementById('nextReview');
+
+    if (!track || !prevBtn || !nextBtn || slides.length === 0) {
+        return;
+    }
+
     let currentSlide = 0;
 
     function showSlide(index) {
@@ -214,7 +223,7 @@ function initScrollToTop() {
     if (!scrollToTopBtn) return;
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 100) {
             scrollToTopBtn.classList.add('show');
         } else {
             scrollToTopBtn.classList.remove('show');
