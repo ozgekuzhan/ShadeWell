@@ -1,13 +1,13 @@
 .contact-page {
     min-height: 100vh;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    padding: 160px 0 0 0;
+    padding: 0;
     position: relative;
 }
 
 .contact-header {
     text-align: center;
-    margin: 4rem 0 4rem 0;
+    margin: 2rem 0 3rem 0;
 }
 
 .contact-header h1 {
