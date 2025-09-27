@@ -19,7 +19,9 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="img/logos/image002.png" alt="Shadewell Blinds" width="auto" height="100">
+                <a href="/">
+                    <img src="img/logos/image002.png" alt="Shadewell Blinds" width="auto">
+                </a>
             </div>
             <ul class="nav-links" id="navbarNav">
                 <li><a href="#home">Home</a></li>
@@ -412,8 +414,10 @@
             </div>
         </section>
 
-        <div class="why-header">
-            <p class="tagline-script">The stories we're proud to leave behind for our children.</p>
+        <div class="tagline-header">
+            <div class="container">
+                <p class="tagline-script">The stories we're proud to leave behind for our children.</p>
+            </div>
         </div>
 
         <section class="testimonials-section">
@@ -625,7 +629,14 @@
                                 <input type="tel" name="phone" id="phoneIndex" placeholder="Enter your phone" autocomplete="tel" required>
                             </div>
                         </div>
-                        <div class="form-group full-width">
+                        <div class="form-group">
+                            <label for="postalCodeIndex">Postal Code</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-pin"></i>
+                                <input type="text" name="postal_code" id="postalCodeIndex" placeholder="e.g. M1A 1A1" autocomplete="postal-code" pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d" title="Please enter a valid Canadian postal code (e.g. M1A 1A1)" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="emailIndex">Email Address (optional)</label>
                             <div class="input-wrapper">
                                 <i class="fas fa-envelope"></i>
@@ -640,10 +651,12 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary">
-                        <span>Start My Window Story</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <div class="btn-wrapper">
+                        <button type="submit" class="btn-primary">
+                            <span>Start My Window Story</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -651,27 +664,29 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content index-footer">
                 <div class="footer-logo">
                     <img src="img/logos/image002.png" alt="Shadewell" >
                 </div>
-                <div class="footer-info">
-                    <h4>Office</h4>
-                    <p><a href="https://maps.google.com/?q=1172+Parkhill+Rd+Oakville+ON+Canada+L6H+4P6" target="_blank">1172 Parkhill Rd Oakville, ON, Canada L6H 4P6</a></p>
-                    <p>Mon-Sat: 9AM-6PM</p>
-                    <p>Sun: By appointment</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Chat With Us</h4>
-                    <p>📞 <a href="tel:+14168446165">+1 (416) 844 6165</a></p>
-                    <p>✉️ <a href="mailto:info@shadewell.ca">info@shadewell.ca</a></p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/shadewell.ca" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/shadewellblinds.ca/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                <div class="footer-info-row">
+                    <div class="footer-contact">
+                        <h4>Chat With Us</h4>
+                        <p>📞 <a href="tel:+14168446165">+1 (416) 844 6165</a></p>
+                        <p>✉️ <a href="mailto:info@shadewell.ca">info@shadewell.ca</a></p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/shadewell.ca" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/shadewellblinds.ca/" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                        <h4>Office</h4>
+                        <p><a href="https://maps.google.com/?q=1172+Parkhill+Rd+Oakville+ON+Canada+L6H+4P6" target="_blank">1172 Parkhill Rd Oakville, ON, Canada L6H 4P6</a></p>
+                        <p>Mon-Sat: 9AM-6PM</p>
+                        <p>Sun: By appointment</p>
                     </div>
                 </div>
             </div>
