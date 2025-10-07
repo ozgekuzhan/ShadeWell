@@ -17,6 +17,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <!-- google -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWV3HZL9PF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QWV3HZL9PF');
+  </script>
+  <!-- pixel  -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1119567673379076');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1119567673379076&ev=PageView&noscript=1" /></noscript>
+
 </head>
 
 <body class="contact-page">
@@ -35,8 +63,7 @@
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
       <a href="#quoteName" class="cta-button">Get Free Quote</a>
-      <button class="mobile-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="mobile-menu-toggle" type="button">
         <span>☰</span>
       </button>
     </nav>
@@ -79,7 +106,9 @@
                     <label for="postalCode">Postal Code</label>
                     <div class="input-wrapper">
                       <i class="fas fa-map-pin"></i>
-                      <input type="text" name="postal_code" id="postalCode" placeholder="e.g. M1A 1A1" autocomplete="postal-code" pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d" title="Please enter a valid Canadian postal code (e.g. M1A 1A1)" required>
+                      <input type="text" name="postal_code" id="postalCode" placeholder="e.g. M1A 1A1"
+                        autocomplete="postal-code" pattern="[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d"
+                        title="Please enter a valid Canadian postal code (e.g. M1A 1A1)" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -176,6 +205,10 @@
       </div>
     </div>
   </footer>
+
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
